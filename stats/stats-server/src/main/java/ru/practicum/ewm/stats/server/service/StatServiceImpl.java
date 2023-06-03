@@ -29,15 +29,15 @@ public class StatServiceImpl implements StatsService {
     @Override
     public List<StatsDto> getStats(LocalDateTime start, LocalDateTime end, List<String> uries, Boolean unique) {
         List<StatsDto> stats;
-        if (uries == null || uries.isEmpty()) {
-            if (unique) {
+        if (unique) {
+            if (uries == null || uries.isEmpty()) {
                 stats = hitRepository.findAllUniqueIpWithoutUries(start, end);
             } else {
-                stats = hitRepository.findAllWithoutUries(start, end);
+                stats = hitRepository.findAllUniqueIpWithUries(uries, start, end);
             }
         } else {
-            if (unique) {
-                stats = hitRepository.findAllUniqueIpWithUries(uries, start, end);
+            if (uries == null || uries.isEmpty()) {
+                stats = hitRepository.findAllWithoutUries(start, end);
             } else {
                 stats = hitRepository.findAllWithUries(uries, start, end);
             }
