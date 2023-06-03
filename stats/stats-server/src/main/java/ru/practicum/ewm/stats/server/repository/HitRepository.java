@@ -22,14 +22,14 @@ public interface HitRepository extends JpaRepository<Hit, Long> {
             "WHERE h.uri IN ?1 AND h.timestamp BETWEEN ?2 AND ?3 " +
             "GROUP BY h.app, h.uri " +
             "ORDER BY COUNT (DISTINCT h.ip) DESC")
-    List<StatsDto> findAllUniqueIpWithUries(List<String> uries, LocalDateTime start, LocalDateTime end);
+    List<StatsDto> findAllUniqueIpWithUries(String[] uries, LocalDateTime start, LocalDateTime end);
 
     @Query(" SELECT new ru.practicum.ewm.stats.dto.StatsDto(h.app, h.uri, COUNT(h.ip))  " +
             "FROM Hit h " +
             "WHERE h.uri IN ?1 AND h.timestamp BETWEEN ?2 AND ?3 " +
             "GROUP BY h.app, h.uri " +
             "ORDER BY COUNT (h.ip) DESC")
-    List<StatsDto> findAllWithUries(List<String> uries, LocalDateTime start, LocalDateTime end);
+    List<StatsDto> findAllWithUries(String[] uries, LocalDateTime start, LocalDateTime end);
 
     @Query(" SELECT new ru.practicum.ewm.stats.dto.StatsDto(h.app, h.uri, COUNT(h.ip))  " +
             "FROM Hit h " +
