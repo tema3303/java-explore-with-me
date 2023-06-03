@@ -2,7 +2,6 @@ package ru.practicum.ewm.stats.client.client;
 
 import java.util.Map;
 
-import lombok.NonNull;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
