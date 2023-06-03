@@ -23,7 +23,7 @@ public class StatsController {
     @GetMapping(path = "/stats")
     public List<StatsDto> getStats(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime start,
                                    @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime end,
-                                   @RequestParam(required = false) String[] uries,
+                                   @RequestParam(required = false) List<String> uries,
                                    @RequestParam(defaultValue = "false") Boolean unique) {
         return service.getStats(start, end, uries, unique);
     }
