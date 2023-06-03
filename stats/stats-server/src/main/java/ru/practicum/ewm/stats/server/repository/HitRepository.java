@@ -15,26 +15,26 @@ public interface HitRepository extends JpaRepository<Hit, Long> {
             "WHERE h.timestamp BETWEEN ?1 AND ?2 " +
             "GROUP BY h.app, h.uri " +
             "ORDER BY COUNT (DISTINCT h.ip) DESC")
-    List<StatsDto> findAllUniqueIpWithoutUries(LocalDateTime start, LocalDateTime end);
+    List<StatsDto> findAllUniqueIpWithoutUris(LocalDateTime start, LocalDateTime end);
 
     @Query(" SELECT new ru.practicum.ewm.stats.dto.StatsDto(h.app, h.uri, COUNT(DISTINCT h.ip))  " +
             "FROM Hit h " +
             "WHERE h.uri IN (?1) AND h.timestamp BETWEEN ?2 AND ?3 " +
             "GROUP BY h.app, h.uri " +
             "ORDER BY COUNT (DISTINCT h.ip) DESC")
-    List<StatsDto> findAllUniqueIpWithUries(List<String> uries, LocalDateTime start, LocalDateTime end);
+    List<StatsDto> findAllUniqueIpWithUris(List<String> uris, LocalDateTime start, LocalDateTime end);
 
     @Query(" SELECT new ru.practicum.ewm.stats.dto.StatsDto(h.app, h.uri, COUNT(h.uri))  " +
             "FROM Hit h " +
             "WHERE h.uri IN (?1) AND h.timestamp BETWEEN ?2 AND ?3 " +
             "GROUP BY h.app, h.uri " +
             "ORDER BY COUNT (h.uri) DESC")
-    List<StatsDto> findAllWithUries(List<String> uries, LocalDateTime start, LocalDateTime end);
+    List<StatsDto> findAllWithUris(List<String> uris, LocalDateTime start, LocalDateTime end);
 
     @Query(" SELECT new ru.practicum.ewm.stats.dto.StatsDto(h.app, h.uri, COUNT(h.ip))  " +
             "FROM Hit h " +
             "WHERE h.timestamp BETWEEN ?1 AND ?2 " +
             "GROUP BY h.app, h.uri " +
             "ORDER BY COUNT (h.ip) DESC")
-    List<StatsDto> findAllWithoutUries(LocalDateTime start, LocalDateTime end);
+    List<StatsDto> findAllWithoutUris(LocalDateTime start, LocalDateTime end);
 }
