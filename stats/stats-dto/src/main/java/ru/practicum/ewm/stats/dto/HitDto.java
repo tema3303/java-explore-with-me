@@ -3,7 +3,6 @@ package ru.practicum.ewm.stats.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -23,7 +22,7 @@ public class HitDto {
     @NotBlank
     @Size(max = 20)
     private String ip;
+    @NonNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    @FutureOrPresent
     private LocalDateTime timestamp;
 }
