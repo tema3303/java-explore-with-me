@@ -1,10 +1,9 @@
 package ru.practicum.ewm.stats.client.client;
 
+import java.util.List;
 import java.util.Map;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.lang.Nullable;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
@@ -30,19 +29,26 @@ public class BaseClient {
 
     private <T> ResponseEntity<Object> makeAndSendRequest(
             HttpMethod method, String path, @Nullable Map<String, Object> parameters, @Nullable T body) {
-        HttpEntity<T> requestEntity = new HttpEntity<>(body);
+        HttpEntity<T> requestEntity = new HttpEntity<>(body, defaultHeaders());
 
-        ResponseEntity<Object> exploreitServerResponse;
+        ResponseEntity<Object> statsServerResponse;
         try {
             if (parameters != null) {
-                exploreitServerResponse = rest.exchange(path, method, requestEntity, Object.class, parameters);
+                statsServerResponse = rest.exchange(path, method, requestEntity, Object.class, parameters);
             } else {
-                exploreitServerResponse = rest.exchange(path, method, requestEntity, Object.class);
+                statsServerResponse = rest.exchange(path, method, requestEntity, Object.class);
             }
         } catch (HttpStatusCodeException e) {
             return ResponseEntity.status(e.getStatusCode()).body(e.getResponseBodyAsByteArray());
         }
-        return prepareGatewayResponse(exploreitServerResponse);
+        return prepareGatewayResponse(statsServerResponse);
+    }
+
+    private HttpHeaders defaultHeaders() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
+        return headers;
     }
 
     private static ResponseEntity<Object> prepareGatewayResponse(ResponseEntity<Object> response) {
