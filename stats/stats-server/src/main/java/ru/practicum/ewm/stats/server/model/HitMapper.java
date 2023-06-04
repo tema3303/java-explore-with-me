@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import ru.practicum.ewm.stats.dto.HitDto;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class HitMapper {
+public final class HitMapper {
 
     public static HitDto toHitDto(Hit hit) {
         return HitDto.builder()
