@@ -25,6 +25,7 @@ public class RequestPrivateController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ParticipationRequestDto createRequest(@PathVariable Long userId, @RequestParam Long eventId) {
+        log.info("Добавлено запрос user {} event{}", userId, eventId);
         return requestService.createRequest(userId, eventId);
     }
 
