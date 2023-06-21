@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDto> getUsers(Integer[] usersId, Integer from, Integer size) {
         List<User> users;
-        if(usersId == null){
+        if (usersId == null) {
             if (from < 0 || size <= 0) {
                 throw new ValidationException("Значения не могут быть отрицательными");
             }

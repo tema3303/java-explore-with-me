@@ -35,16 +35,15 @@ public class EventPublicController {
                                          @RequestParam(defaultValue = "0") @PositiveOrZero Integer from,
                                          @RequestParam(defaultValue = "10") @Positive Integer size,
                                          HttpServletRequest request) {
-        request.setAttribute("app_name","main application");
-        //hitClient.createHit(request);
+        request.setAttribute("app_name", "main application");
+        hitClient.createHit(request);
         return eventService.getEvents(text, categories, paid, rangeStart, rangeEnd, onlyAvailable, sort, from, size, request);
     }
 
     @GetMapping("/{id}")
     public EventFullDto getEventById(@PathVariable Long id, HttpServletRequest request) {
-        request.setAttribute("app_name","main application");
-        //hitClient.createHit(request);
+        request.setAttribute("app_name", "main application");
+        hitClient.createHit(request);
         return eventService.getEventById(id, request);
     }
-
 }

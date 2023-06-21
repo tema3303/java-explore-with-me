@@ -21,20 +21,20 @@ public class UserAdminController {
     @GetMapping
     public List<UserDto> getUsers(@RequestParam(required = false) Integer[] usersId,
                                   @RequestParam(defaultValue = "0") Integer from,
-                                  @RequestParam(defaultValue = "10") Integer size){
+                                  @RequestParam(defaultValue = "10") Integer size) {
         return userService.getUsers(usersId, from, size);
     }
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    public UserDto addUser(@Valid @RequestBody UserDto userDto){
+    public UserDto addUser(@Valid @RequestBody UserDto userDto) {
         log.info("Добавлен пользователь {}", userDto);
         return userService.addUser(userDto);
     }
 
     @DeleteMapping("/{userId}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void deleteUser(@PathVariable Long userId){
+    public void deleteUser(@PathVariable Long userId) {
         userService.deleteUser(userId);
         log.info("Удален пользователь {}", userId);
     }

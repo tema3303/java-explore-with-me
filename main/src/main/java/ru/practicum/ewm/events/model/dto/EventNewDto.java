@@ -5,9 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.practicum.ewm.categories.model.Category;
 import ru.practicum.ewm.locations.LocationDto;
-import ru.practicum.ewm.locations.Locations;
 
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;

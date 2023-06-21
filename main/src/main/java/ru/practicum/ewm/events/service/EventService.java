@@ -25,5 +25,5 @@ public interface EventService {
                                   LocalDateTime rangeEnd, Boolean onlyAvailable, String sort,
                                   Integer from, Integer size, HttpServletRequest request);
 
-    EventFullDto getEventById(Long id,HttpServletRequest request);
+    EventFullDto getEventById(Long id, HttpServletRequest request);
 }

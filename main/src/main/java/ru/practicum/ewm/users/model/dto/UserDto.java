@@ -14,10 +14,10 @@ import javax.validation.constraints.*;
 public class UserDto {
     @NotBlank
     @Email
-    @Size(min = 6,max = 254)
+    @Size(min = 6, max = 254)
     private String email;
     private long id;
     @NotBlank
-    @Size(min = 2,max = 250)
+    @Size(min = 2, max = 250)
     private String name;
 }

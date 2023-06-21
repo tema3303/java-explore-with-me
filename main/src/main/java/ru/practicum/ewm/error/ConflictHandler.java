@@ -66,6 +66,4 @@ public class ConflictHandler {
                 .timestamp(LocalDateTime.now())
                 .build();
     }
-
-
 }

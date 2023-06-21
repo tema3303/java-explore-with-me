@@ -5,15 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import ru.practicum.ewm.categories.model.Category;
 import ru.practicum.ewm.events.enums.State;
 import ru.practicum.ewm.locations.LocationDto;
-import ru.practicum.ewm.locations.Locations;
 import ru.practicum.ewm.users.model.User;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data

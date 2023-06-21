@@ -12,28 +12,14 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class CompilationMapper {
 
-    public static Compilation toCompilation(NewCompilationDto newCompilationDto){
+    public static Compilation toCompilation(NewCompilationDto newCompilationDto) {
         return Compilation.builder()
                 .pinned(newCompilationDto.getPinned())
                 .title(newCompilationDto.getTitle())
                 .build();
     }
 
-    public static Compilation toCompilation(CompilationDto compilationDto){
-        return Compilation.builder()
-                .pinned(compilationDto.getPinned())
-                .title(compilationDto.getTitle())
-                .build();
-    }
-
-    public static Compilation toCompilation(UpdateCompilationRequest compilationDto){
-        return Compilation.builder()
-                .pinned(compilationDto.getPinned())
-                .title(compilationDto.getTitle())
-                .build();
-    }
-
-    public static CompilationDto toCompilationDto(Compilation compilation, List<EventShortDto> eventsShort){
+    public static CompilationDto toCompilationDto(Compilation compilation, List<EventShortDto> eventsShort) {
         return CompilationDto.builder()
                 .id(compilation.getId())
                 .events(eventsShort)
@@ -41,6 +27,4 @@ public final class CompilationMapper {
                 .title(compilation.getTitle())
                 .build();
     }
-
-
 }

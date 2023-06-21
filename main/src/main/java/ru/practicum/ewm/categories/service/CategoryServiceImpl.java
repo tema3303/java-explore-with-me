@@ -25,7 +25,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     @Transactional
     public CategoryDto addCategory(CategoryDto categoryDto) {
-        if(categoryRepository.existsByName(categoryDto.getName())){
+        if (categoryRepository.existsByName(categoryDto.getName())) {
             throw new CategoryNameDoubleException("имя уже занято");
         }
         Category category = CategoryMapper.toCategory(categoryDto);
@@ -43,7 +43,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Transactional
     public CategoryDto updateCategory(Long catId, CategoryDto category) {
         Category oldCategory = categoryRepository.findById(catId).orElseThrow(() -> new NotFoundException("Category", catId));
-        if(categoryRepository.existsByName(category.getName()) && !category.getName().equals(oldCategory.getName())){
+        if (categoryRepository.existsByName(category.getName()) && !category.getName().equals(oldCategory.getName())) {
             throw new CategoryNameDoubleException("имя уже занято");
         }
         checkCategoryId(catId);

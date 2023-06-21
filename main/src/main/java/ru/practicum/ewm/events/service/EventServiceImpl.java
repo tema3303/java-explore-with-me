@@ -4,7 +4,6 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.Expressions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.client.utils.DateUtils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -70,7 +69,7 @@ public class EventServiceImpl implements EventService {
         User user = userRepository.findById(usersId).orElseThrow(() -> new NotFoundException("Нет данных", usersId));
         Category category = categoryRepository.findById(eventNewDto.getCategory()).orElseThrow(()
                 -> new NotFoundException("Нет данных", eventNewDto.getCategory()));
-        if(eventNewDto.getEventDate() != null && !eventNewDto.getEventDate().isAfter(LocalDateTime.now().plusHours(2))){
+        if (eventNewDto.getEventDate() != null && !eventNewDto.getEventDate().isAfter(LocalDateTime.now().plusHours(2))) {
             throw new EventBadTimeException("Only pending or canceled events can be changed");
         }
         Event event = EventMapper.toEvent(eventNewDto);
@@ -108,7 +107,7 @@ public class EventServiceImpl implements EventService {
         }
         if (newEvent.getEventDate() != null) {
             oldEvent.setEventDate(newEvent.getEventDate());
-            if(!newEvent.getEventDate().isAfter(LocalDateTime.now().plusHours(2))){
+            if (!newEvent.getEventDate().isAfter(LocalDateTime.now().plusHours(2))) {
                 throw new EventBadTimeException("Only pending or canceled events can be changed");
             }
         }
@@ -188,7 +187,7 @@ public class EventServiceImpl implements EventService {
         }
         if (newEvent.getEventDate() != null) {
             oldEvent.setEventDate(newEvent.getEventDate());
-            if(!newEvent.getEventDate().isAfter(LocalDateTime.now().plusHours(2))){
+            if (!newEvent.getEventDate().isAfter(LocalDateTime.now().plusHours(2))) {
                 throw new EventBadTimeException("Only pending or canceled events can be changed");
             }
         }
@@ -237,8 +236,7 @@ public class EventServiceImpl implements EventService {
         }
         expression = expression.and(QEvent.event.state.eq(State.PUBLISHED));
         List<Event> resultEvents = eventRepository.findAll(expression, pagination).getContent();
-
-        //setViewsForEvents(resultEvents);
+        setViewsForEvents(resultEvents);
         return resultEvents.stream()
                 .map(EventMapper::toEventShortDto)
                 .collect(Collectors.toList());
@@ -250,8 +248,7 @@ public class EventServiceImpl implements EventService {
         if (event.getState() != State.PUBLISHED) {
             throw new NotFoundException("Нет данных", id);
         }
-
-        //setViewsForEvents(List.of(event));
+        setViewsForEvents(List.of(event));
         return EventMapper.toEventFullDto(event);
     }
 

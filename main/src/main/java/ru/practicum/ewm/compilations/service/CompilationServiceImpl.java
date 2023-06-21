@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 @Slf4j
-public class CompilationServiceImpl implements  CompilationService{
+public class CompilationServiceImpl implements CompilationService {
 
     private final CompilationRepository compilationRepository;
     private final EventRepository eventRepository;
@@ -45,12 +45,12 @@ public class CompilationServiceImpl implements  CompilationService{
                 eventRepository.findAllByIdIn(newCompilationDto.getEvents()) : null;
         compilation.setEvents(events);
         List<EventShortDto> eventShort = new ArrayList<>();
-        if(events != null){
+        if (events != null) {
             eventShort = events.stream()
                     .map(EventMapper::toEventShortDto)
                     .collect(Collectors.toList());
         }
-        return CompilationMapper.toCompilationDto(compilationRepository.save(compilation),eventShort);
+        return CompilationMapper.toCompilationDto(compilationRepository.save(compilation), eventShort);
     }
 
     @Override
@@ -64,12 +64,12 @@ public class CompilationServiceImpl implements  CompilationService{
     @Transactional
     public CompilationDto updateCompilation(Long compId, UpdateCompilationRequest newCompilation) {
         Compilation oldCompilation = compilationRepository.findById(compId).orElseThrow(
-                () -> new NotFoundException("Нет данных",compId));
+                () -> new NotFoundException("Нет данных", compId));
         List<Event> events = (newCompilation.getEvents() != null) ?
                 eventRepository.findAllByIdIn(newCompilation.getEvents()) : null;
         oldCompilation.setEvents(events);
         List<EventShortDto> eventShort = new ArrayList<>();
-        if(events != null){
+        if (events != null) {
             eventShort = events.stream()
                     .map(EventMapper::toEventShortDto)
                     .collect(Collectors.toList());
@@ -80,21 +80,21 @@ public class CompilationServiceImpl implements  CompilationService{
         if (newCompilation.getPinned() != null) {
             oldCompilation.setPinned(newCompilation.getPinned());
         }
-        return CompilationMapper.toCompilationDto(compilationRepository.save(oldCompilation),eventShort);
+        return CompilationMapper.toCompilationDto(compilationRepository.save(oldCompilation), eventShort);
     }
 
     @Override
     public List<CompilationDto> getCompilations(Boolean pinned, Integer from, Integer size) {
         Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);
-        if(pinned != null){
+        if (pinned != null) {
             expression.and(QCompilation.compilation.pinned.eq(pinned));
         }
         List<Compilation> compilations = compilationRepository.findAll(expression, pagination).getContent();
         List<Event> events = new ArrayList<>();
         for (Compilation compilation : compilations) {
             List<Event> compilationEvents = compilation.getEvents();
-            for(Event event:compilationEvents){
+            for (Event event : compilationEvents) {
                 events.add(event);
             }
         }
@@ -114,7 +114,7 @@ public class CompilationServiceImpl implements  CompilationService{
                 .map(EventMapper::toEventShortDto)
                 .collect(Collectors.toList());
         return CompilationMapper.toCompilationDto(compilationRepository.findById(compId)
-                .orElseThrow(() -> new NotFoundException("Category", compId)),eventShort);
+                .orElseThrow(() -> new NotFoundException("Category", compId)), eventShort);
     }
 
     private void checkCompilationId(Long compId) {

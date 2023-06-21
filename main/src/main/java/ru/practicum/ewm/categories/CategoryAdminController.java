@@ -8,7 +8,6 @@ import ru.practicum.ewm.categories.model.dto.CategoryDto;
 import ru.practicum.ewm.categories.service.CategoryService;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/admin/categories")
@@ -16,7 +15,6 @@ import java.util.List;
 @Slf4j
 public class CategoryAdminController {
     private final CategoryService categoryService;
-
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)

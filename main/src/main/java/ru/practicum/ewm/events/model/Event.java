@@ -5,7 +5,6 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import ru.practicum.ewm.categories.model.Category;
 import ru.practicum.ewm.events.enums.State;
-import ru.practicum.ewm.locations.Locations;
 import ru.practicum.ewm.users.model.User;
 
 import javax.persistence.*;
@@ -42,9 +41,9 @@ public class Event {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "initiator_id", nullable = false)
     private User initiator;
-    @Column(name = "location_lat",nullable = false)
+    @Column(name = "location_lat", nullable = false)
     private Float locationLat;
-    @Column(name = "location_lon",nullable = false)
+    @Column(name = "location_lon", nullable = false)
     private Float locationLon;
     @Column(nullable = false)
     private Boolean paid;

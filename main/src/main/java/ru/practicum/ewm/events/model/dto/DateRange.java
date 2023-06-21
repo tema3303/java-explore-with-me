@@ -15,5 +15,4 @@ public class DateRange {
 
     private LocalDateTime rangeStart;
     private LocalDateTime rangeEnd;
-
 }

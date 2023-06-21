@@ -2,17 +2,13 @@ package ru.practicum.ewm.events.model;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import ru.practicum.ewm.categories.model.Category;
 import ru.practicum.ewm.events.model.dto.EventFullDto;
 import ru.practicum.ewm.events.model.dto.EventNewDto;
 import ru.practicum.ewm.events.model.dto.EventShortDto;
-import ru.practicum.ewm.events.model.dto.EventUpdateUserDto;
 import ru.practicum.ewm.locations.LocationDto;
-import ru.practicum.ewm.users.model.User;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class EventMapper {
-
 
     public static Event toEvent(EventNewDto eventNewDto) {
         return Event.builder()
@@ -50,7 +46,7 @@ public final class EventMapper {
                 .build();
     }
 
-    public static EventShortDto toEventShortDto(Event event){
+    public static EventShortDto toEventShortDto(Event event) {
         return EventShortDto.builder()
                 .id(event.getId())
                 .annotation(event.getAnnotation())
@@ -61,20 +57,6 @@ public final class EventMapper {
                 .paid(event.getPaid())
                 .title(event.getTitle())
                 .views(event.getViews())
-                .build();
-    }
-
-    public static Event toEvent(EventUpdateUserDto eventUpdateUserDto){
-        return Event.builder()
-                .annotation(eventUpdateUserDto.getAnnotation())
-                .description(eventUpdateUserDto.getDescription())
-                .eventDate(eventUpdateUserDto.getEventDate())
-                .locationLat(eventUpdateUserDto.getLocation().getLat())
-                .locationLon(eventUpdateUserDto.getLocation().getLon())
-                .paid(eventUpdateUserDto.getPaid())
-                .participantLimit(eventUpdateUserDto.getParticipantLimit())
-                .requestModeration(eventUpdateUserDto.getRequestModeration())
-                .title(eventUpdateUserDto.getTitle())
                 .build();
     }
 }

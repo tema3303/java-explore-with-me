@@ -15,6 +15,6 @@ import javax.validation.constraints.Size;
 public class CategoryDto {
     private long id;
     @NotBlank
-    @Size(min = 1,max = 50)
+    @Size(min = 1, max = 50)
     private String name;
 }

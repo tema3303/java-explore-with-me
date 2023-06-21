@@ -50,7 +50,7 @@ public class HitClient extends BaseClient {
 
     public ResponseEntity<Object> createHit(HttpServletRequest request) {
         HitDto hitDto = HitDto.builder()
-                .app((String)request.getAttribute("app_name"))
+                .app((String) request.getAttribute("app_name"))
                 .uri(request.getRequestURI())
                 .ip(request.getRemoteAddr())
                 .timestamp(LocalDateTime.now())

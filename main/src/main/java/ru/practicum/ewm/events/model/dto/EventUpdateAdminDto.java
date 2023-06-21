@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.practicum.ewm.locations.LocationDto;
-import ru.practicum.ewm.locations.Locations;
 
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Size;
