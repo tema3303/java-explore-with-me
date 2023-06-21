@@ -116,10 +116,6 @@ public class RequestServiceImpl implements RequestService {
         List<ParticipationRequest> requests = requestRepository.findAllByEventIdAndIdIn(event.getId(), requestIds);
         List<ParticipationRequestDto> confirmedRequests = new ArrayList<>();
         List<ParticipationRequestDto> rejectedRequests = new ArrayList<>();
-        Integer limit = participantLimit - numberOfConfirmedRequests;
-        if (event.getParticipantLimit() != 0 && limit <= 0) {
-            throw new RequestNotPossibleCreateException("The participant limit has been reached");
-        }
         for (ParticipationRequest r : requests) {
             if (r.getStatus() != RequestStatus.PENDING) {
                 throw new RequestNotPossibleCreateException("статус можно изменить только у заявок, находящихся в состоянии ожидания");
