@@ -21,7 +21,7 @@ public class CategoryAdminController {
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
     public CategoryDto addCategory(@Valid @RequestBody CategoryDto categoryDto) {
-        log.info("Добавлен пользователь {}", categoryDto);
+        log.info("Добавлена категория {}", categoryDto);
         return categoryService.addCategory(categoryDto);
     }
 
@@ -33,6 +33,7 @@ public class CategoryAdminController {
 
     @PatchMapping("/{catId}")
     public CategoryDto updateCategory(@PathVariable Long catId, @Valid @RequestBody CategoryDto categoryDto) {
+        log.info("Обновлена категория {}", categoryDto);
         return categoryService.updateCategory(catId, categoryDto);
     }
 }

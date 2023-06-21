@@ -9,6 +9,7 @@ import ru.practicum.ewm.categories.model.Category;
 import ru.practicum.ewm.locations.LocationDto;
 import ru.practicum.ewm.locations.Locations;
 
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -29,6 +30,7 @@ public class EventNewDto {
     @NotBlank
     private String description;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @Future
     private LocalDateTime eventDate;
     @NotNull
     private LocationDto location;

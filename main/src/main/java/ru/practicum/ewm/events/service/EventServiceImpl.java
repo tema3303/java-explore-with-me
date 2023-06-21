@@ -13,6 +13,7 @@ import ru.practicum.ewm.categories.model.Category;
 import ru.practicum.ewm.categories.model.CategoryMapper;
 import ru.practicum.ewm.categories.repository.CategoryRepository;
 import ru.practicum.ewm.categories.service.CategoryService;
+import ru.practicum.ewm.error.exceptions.EventBadTimeException;
 import ru.practicum.ewm.error.exceptions.EventNotPossibleChange;
 import ru.practicum.ewm.error.exceptions.NotFoundException;
 import ru.practicum.ewm.error.exceptions.ValidationException;
@@ -69,6 +70,9 @@ public class EventServiceImpl implements EventService {
         User user = userRepository.findById(usersId).orElseThrow(() -> new NotFoundException("Нет данных", usersId));
         Category category = categoryRepository.findById(eventNewDto.getCategory()).orElseThrow(()
                 -> new NotFoundException("Нет данных", eventNewDto.getCategory()));
+        if(eventNewDto.getEventDate() != null && !eventNewDto.getEventDate().isAfter(LocalDateTime.now().plusHours(2))){
+            throw new EventBadTimeException("Only pending or canceled events can be changed");
+        }
         Event event = EventMapper.toEvent(eventNewDto);
         event.setInitiator(user);
         event.setCategory(category);
@@ -104,6 +108,9 @@ public class EventServiceImpl implements EventService {
         }
         if (newEvent.getEventDate() != null) {
             oldEvent.setEventDate(newEvent.getEventDate());
+            if(!newEvent.getEventDate().isAfter(LocalDateTime.now().plusHours(2))){
+                throw new EventBadTimeException("Only pending or canceled events can be changed");
+            }
         }
         if (newEvent.getLocation() != null) {
             oldEvent.setLocationLat(newEvent.getLocation().getLat());
@@ -128,6 +135,9 @@ public class EventServiceImpl implements EventService {
     @Override
     public List<EventFullDto> getSearchEvents(List<Long> users, List<String> states, List<Long> categories, LocalDateTime rangeStart,
                                               LocalDateTime rangeEnd, Integer from, Integer size) {
+        if (rangeStart != null && rangeEnd != null && rangeStart.isAfter(rangeEnd)) {
+            throw new ValidationException("Start date must be before End");
+        }
         Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);
         if (users != null) {
@@ -178,6 +188,9 @@ public class EventServiceImpl implements EventService {
         }
         if (newEvent.getEventDate() != null) {
             oldEvent.setEventDate(newEvent.getEventDate());
+            if(!newEvent.getEventDate().isAfter(LocalDateTime.now().plusHours(2))){
+                throw new EventBadTimeException("Only pending or canceled events can be changed");
+            }
         }
         if (newEvent.getLocation() != null) {
             oldEvent.setLocationLat(newEvent.getLocation().getLat());
@@ -203,6 +216,9 @@ public class EventServiceImpl implements EventService {
     public List<EventShortDto> getEvents(String text, List<Long> categories, Boolean paid,
                                          LocalDateTime rangeStart, LocalDateTime rangeEnd, Boolean onlyAvailable,
                                          String sort, Integer from, Integer size, HttpServletRequest request) {
+        if (rangeStart != null && rangeEnd != null && rangeStart.isAfter(rangeEnd)) {
+            throw new ValidationException("Start date must be before End");
+        }
         Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);
         if (text != null) {
@@ -222,7 +238,7 @@ public class EventServiceImpl implements EventService {
         expression = expression.and(QEvent.event.state.eq(State.PUBLISHED));
         List<Event> resultEvents = eventRepository.findAll(expression, pagination).getContent();
 
-        setViewsForEvents(resultEvents);
+        //setViewsForEvents(resultEvents);
         return resultEvents.stream()
                 .map(EventMapper::toEventShortDto)
                 .collect(Collectors.toList());
@@ -235,7 +251,7 @@ public class EventServiceImpl implements EventService {
             throw new NotFoundException("Нет данных", id);
         }
 
-        setViewsForEvents(List.of(event));
+        //setViewsForEvents(List.of(event));
         return EventMapper.toEventFullDto(event);
     }
 

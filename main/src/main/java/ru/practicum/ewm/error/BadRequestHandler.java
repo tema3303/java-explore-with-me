@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import ru.practicum.ewm.error.exceptions.EventBadTimeException;
+import ru.practicum.ewm.error.exceptions.ValidationException;
 
 import java.time.LocalDateTime;
 
@@ -18,6 +20,28 @@ public class BadRequestHandler {
 
     @ExceptionHandler
     public ApiError handleNotFoundException(final MethodArgumentTypeMismatchException e) {
+        String message = e.getMessage();
+        return ApiError.builder()
+                .message(message)
+                .reason(REASON_BAD_REQUEST)
+                .status(RESPONSE_STATUS)
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
+    @ExceptionHandler
+    public ApiError handleNotFoundException(final ValidationException e) {
+        String message = e.getMessage();
+        return ApiError.builder()
+                .message(message)
+                .reason(REASON_BAD_REQUEST)
+                .status(RESPONSE_STATUS)
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
+    @ExceptionHandler
+    public ApiError handleNotFoundException(final EventBadTimeException e) {
         String message = e.getMessage();
         return ApiError.builder()
                 .message(message)

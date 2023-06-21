@@ -26,13 +26,11 @@ public class CompilationsPublicController {
     public List<CompilationDto> getCompilations(@RequestParam(required = false) Boolean pinned,
                                                 @RequestParam(defaultValue = "0") @PositiveOrZero Integer from,
                                                 @RequestParam(defaultValue = "10") @Positive Integer size) {
-        //log.info("Обновлено событие {}", newCompilationDto);
         return compilationService.getCompilations(pinned,from,size);
     }
 
     @GetMapping("/{compId}")
     public CompilationDto getCompilationById(@PathVariable Long compId) {
-        //log.info("Обновлено событие {}", newCompilationDto);
         return compilationService.getCompilationById(compId);
     }
 }

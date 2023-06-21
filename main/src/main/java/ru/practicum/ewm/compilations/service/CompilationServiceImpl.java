@@ -1,5 +1,7 @@
 package ru.practicum.ewm.compilations.service;
 
+import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.Expressions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.ewm.compilations.model.Compilation;
 import ru.practicum.ewm.compilations.model.CompilationMapper;
+import ru.practicum.ewm.compilations.model.QCompilation;
 import ru.practicum.ewm.compilations.model.dto.CompilationDto;
 import ru.practicum.ewm.compilations.model.dto.NewCompilationDto;
 import ru.practicum.ewm.compilations.model.dto.UpdateCompilationRequest;
@@ -83,15 +86,19 @@ public class CompilationServiceImpl implements  CompilationService{
     @Override
     public List<CompilationDto> getCompilations(Boolean pinned, Integer from, Integer size) {
         Pageable pagination = PageRequest.of(from / size, size);
-        List<Compilation> compilations = compilationRepository.findAllByPinned(pinned, pagination).getContent();
-        List<Event> events2 = new ArrayList<>();
+        BooleanExpression expression = Expressions.asBoolean(true).eq(true);
+        if(pinned != null){
+            expression.and(QCompilation.compilation.pinned.eq(pinned));
+        }
+        List<Compilation> compilations = compilationRepository.findAll(expression, pagination).getContent();
+        List<Event> events = new ArrayList<>();
         for (Compilation compilation : compilations) {
             List<Event> compilationEvents = compilation.getEvents();
             for(Event event:compilationEvents){
-                events2.add(event);
+                events.add(event);
             }
         }
-        List<EventShortDto> result = events2.stream()
+        List<EventShortDto> result = events.stream()
                 .map(EventMapper::toEventShortDto)
                 .collect(Collectors.toList());
         return compilations.stream()

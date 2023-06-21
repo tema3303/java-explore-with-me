@@ -42,7 +42,8 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     @Transactional
     public CategoryDto updateCategory(Long catId, CategoryDto category) {
-        if(categoryRepository.existsByName(category.getName())){
+        Category oldCategory = categoryRepository.findById(catId).orElseThrow(() -> new NotFoundException("Category", catId));
+        if(categoryRepository.existsByName(category.getName()) && !category.getName().equals(oldCategory.getName())){
             throw new CategoryNameDoubleException("имя уже занято");
         }
         checkCategoryId(catId);
