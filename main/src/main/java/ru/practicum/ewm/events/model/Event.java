@@ -58,6 +58,6 @@ public class Event {
     private State state;
     @Column(length = 120, nullable = false)
     private String title;
-    @Transient
+    @Column
     private Long views;
 }
