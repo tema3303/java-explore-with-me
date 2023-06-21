@@ -22,13 +22,13 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public List<UserDto> getUsers(Integer[] usersId, Integer from, Integer size) {
+    public List<UserDto> getUsers(List<Long> usersId, Integer from, Integer size) {
         List<User> users;
         if (usersId == null) {
             Pageable pagination = PageRequest.of(from / size, size);
             users = userRepository.findAll(pagination).getContent();
         } else {
-            users = userRepository.findByIdIn(usersId);
+            users = userRepository.findAllByIdIn(usersId);
         }
         return users.stream()
                 .map(UserMapper::toUserDto)
@@ -45,13 +45,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void deleteUser(long userId) {
-        //checkUserId(userId);
-        userRepository.deleteById(userId);
-    }
-
-    public void checkUserId(Long userId) {
         if (!userRepository.existsById(userId)) {
             throw new NotFoundException("User", userId);
         }
+        userRepository.deleteById(userId);
     }
 }

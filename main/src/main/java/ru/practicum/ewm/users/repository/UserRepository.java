@@ -6,5 +6,5 @@ import ru.practicum.ewm.users.model.User;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findByIdIn(Integer[] usersId);
+    List<User> findAllByIdIn(List<Long> usersId);
 }

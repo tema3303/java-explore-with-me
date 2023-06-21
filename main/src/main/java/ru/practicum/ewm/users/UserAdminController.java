@@ -21,10 +21,10 @@ public class UserAdminController {
     private final UserService userService;
 
     @GetMapping
-    public List<UserDto> getUsers(@RequestParam(required = false) Integer[] usersId,
+    public List<UserDto> getUsers(@RequestParam(required = false) List<Long> ids,
                                   @RequestParam(defaultValue = "0") @PositiveOrZero Integer from,
                                   @RequestParam(defaultValue = "10") @Positive Integer size) {
-        return userService.getUsers(usersId, from, size);
+        return userService.getUsers(ids, from, size);
     }
 
     @PostMapping
