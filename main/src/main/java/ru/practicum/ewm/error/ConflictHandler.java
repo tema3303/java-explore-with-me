@@ -17,10 +17,10 @@ import java.time.LocalDateTime;
 @Slf4j
 public class ConflictHandler {
 
-    private final static String RESPONSE_STATUS_CONFLICT = HttpStatus.CONFLICT.name();
-    private final static String RESPONSE_STATUS_FORBIDDEN = HttpStatus.FORBIDDEN.name();
-    private final static String REASON_INTEGRITY_CONFLICT = "Integrity constraint has been violated.";
-    private final static String REASON_INTEGRITY_FORBIDDEN = "For the requested operation the conditions are not met.";
+    private static final String RESPONSE_STATUS_CONFLICT = HttpStatus.CONFLICT.name();
+    private static final String RESPONSE_STATUS_FORBIDDEN = HttpStatus.FORBIDDEN.name();
+    private static final String REASON_INTEGRITY_CONFLICT = "Integrity constraint has been violated.";
+    private static final String REASON_INTEGRITY_FORBIDDEN = "For the requested operation the conditions are not met.";
 
 
     @ExceptionHandler

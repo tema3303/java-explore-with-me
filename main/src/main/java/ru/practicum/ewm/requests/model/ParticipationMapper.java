@@ -2,9 +2,7 @@ package ru.practicum.ewm.requests.model;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import ru.practicum.ewm.events.model.Event;
 import ru.practicum.ewm.requests.model.dto.ParticipationRequestDto;
-import ru.practicum.ewm.users.model.User;
 
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

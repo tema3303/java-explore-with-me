@@ -4,7 +4,6 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import ru.practicum.ewm.compilations.model.dto.CompilationDto;
 import ru.practicum.ewm.compilations.model.dto.NewCompilationDto;
-import ru.practicum.ewm.compilations.model.dto.UpdateCompilationRequest;
 import ru.practicum.ewm.events.model.dto.EventShortDto;
 
 import java.util.List;

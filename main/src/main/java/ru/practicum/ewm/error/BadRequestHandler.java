@@ -15,8 +15,8 @@ import java.time.LocalDateTime;
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 @Slf4j
 public class BadRequestHandler {
-    private final static String RESPONSE_STATUS = HttpStatus.BAD_REQUEST.name();
-    private final static String REASON_BAD_REQUEST = "Incorrectly made request.";
+    private static final String RESPONSE_STATUS = HttpStatus.BAD_REQUEST.name();
+    private static final String REASON_BAD_REQUEST = "Incorrectly made request.";
 
     @ExceptionHandler
     public ApiError handleNotFoundException(final MethodArgumentTypeMismatchException e) {
