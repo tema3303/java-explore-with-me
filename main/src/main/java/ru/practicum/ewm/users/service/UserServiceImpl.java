@@ -6,7 +6,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.ewm.error.exceptions.NotFoundException;
-import ru.practicum.ewm.error.exceptions.ValidationException;
 import ru.practicum.ewm.users.repository.UserRepository;
 import ru.practicum.ewm.users.model.User;
 import ru.practicum.ewm.users.model.UserMapper;
@@ -26,13 +25,10 @@ public class UserServiceImpl implements UserService {
     public List<UserDto> getUsers(Integer[] usersId, Integer from, Integer size) {
         List<User> users;
         if (usersId == null) {
-            if (from < 0 || size <= 0) {
-                throw new ValidationException("Значения не могут быть отрицательными");
-            }
             Pageable pagination = PageRequest.of(from / size, size);
             users = userRepository.findAll(pagination).getContent();
         } else {
-            users = userRepository.findAllByIdIn(usersId);
+            users = userRepository.findByIdIn(usersId);
         }
         return users.stream()
                 .map(UserMapper::toUserDto)
@@ -49,7 +45,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void deleteUser(long userId) {
-        checkUserId(userId);
+        //checkUserId(userId);
         userRepository.deleteById(userId);
     }
 
