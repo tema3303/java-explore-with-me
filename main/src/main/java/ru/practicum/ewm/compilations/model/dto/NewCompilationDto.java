@@ -1,0 +1,23 @@
+package ru.practicum.ewm.compilations.model.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.bind.DefaultValue;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+import java.util.List;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class NewCompilationDto {
+    private List<Long> events;
+    private Boolean pinned;
+    @NotBlank
+    @Size(min = 1, max = 50)
+    private String title;
+}
