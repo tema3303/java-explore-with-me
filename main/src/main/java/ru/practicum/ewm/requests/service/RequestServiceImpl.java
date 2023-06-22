@@ -52,29 +52,34 @@ public class RequestServiceImpl implements RequestService {
         if (event.getInitiator().equals(user)) {
             throw new RequestNotPossibleCreateException("инициатор события не может добавить запрос на участие в своём событии");
         }
-        if (event.getState() != State.PUBLISHED) {
+        if (!event.getState().equals(State.PUBLISHED)) {
             throw new RequestNotPossibleCreateException("нельзя участвовать в неопубликованном событии");
         }
-        Integer limit = event.getParticipantLimit() - event.getConfirmedRequests();
-        if (event.getParticipantLimit() != 0 && limit <= 0) {
+        if (!event.getParticipantLimit().equals(0) && event.getParticipantLimit() <= event.getConfirmedRequests()) {
             throw new RequestNotPossibleCreateException("The participant limit has been reached");
         }
-        RequestStatus status = event.getRequestModeration() ? RequestStatus.PENDING : RequestStatus.CONFIRMED;
-        if (event.getParticipantLimit() == 0) {
-            status = RequestStatus.CONFIRMED;
+        ParticipationRequest participationRequest;
+        if (event.getParticipantLimit() == 0 || !event.getRequestModeration()) {
+            participationRequest = ParticipationRequest.builder()
+                    .created(LocalDateTime.now())
+                    .event(event)
+                    .requester(user)
+                    .status(RequestStatus.CONFIRMED)
+                    .build();
+            event.setConfirmedRequests(event.getConfirmedRequests() + 1);
+        } else {
+            participationRequest = ParticipationRequest.builder()
+                    .created(LocalDateTime.now())
+                    .event(event)
+                    .requester(user)
+                    .status(RequestStatus.PENDING)
+                    .build();
         }
-        ParticipationRequest participationRequest = ParticipationRequest.builder()
-                .created(LocalDateTime.now())
-                .event(event)
-                .requester(user)
-                .status(status)
-                .build();
         if (requestRepository.existsByRequester_IdAndEvent_Id(userId, eventId)) {
             throw new RequestNotPossibleCreateException("нельзя добавить повторный запрос");
         }
-        requestRepository.save(participationRequest);
-        event.setConfirmedRequests(event.getConfirmedRequests() + 1);
         eventRepository.save(event);
+        requestRepository.save(participationRequest);
         return ParticipationMapper.toParticipationRequestDto(participationRequest);
     }
 
@@ -116,6 +121,9 @@ public class RequestServiceImpl implements RequestService {
         List<ParticipationRequest> requests = requestRepository.findAllByEventIdAndIdIn(event.getId(), requestIds);
         List<ParticipationRequestDto> confirmedRequests = new ArrayList<>();
         List<ParticipationRequestDto> rejectedRequests = new ArrayList<>();
+        if (participantLimit != 0 && participantLimit - numberOfConfirmedRequests <= 0) {
+            throw new RequestNotPossibleCreateException("The participant limit has been reached");
+        }
         for (ParticipationRequest r : requests) {
             if (r.getStatus() != RequestStatus.PENDING) {
                 throw new RequestNotPossibleCreateException("статус можно изменить только у заявок, находящихся в состоянии ожидания");
