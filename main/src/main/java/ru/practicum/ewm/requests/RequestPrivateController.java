@@ -18,7 +18,6 @@ public class RequestPrivateController {
 
     @GetMapping
     public List<ParticipationRequestDto> getAllUserParticipationRequests(@PathVariable Long userId) {
-        //log.info("Добавлено событие {}", eventNewDto);
         return requestService.getAllUserParticipationRequests(userId);
     }
 
