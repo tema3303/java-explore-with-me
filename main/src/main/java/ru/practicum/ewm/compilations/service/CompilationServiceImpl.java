@@ -88,7 +88,7 @@ public class CompilationServiceImpl implements CompilationService {
         Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);
         if (pinned != null) {
-            expression.and(QCompilation.compilation.pinned.eq(pinned));
+            expression = expression.and(QCompilation.compilation.pinned.eq(pinned));
         }
         List<Compilation> compilations = compilationRepository.findAll(expression, pagination).getContent();
         List<Event> events = new ArrayList<>();
