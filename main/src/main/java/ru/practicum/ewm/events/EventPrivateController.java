@@ -37,13 +37,11 @@ public class EventPrivateController {
     public List<EventShortDto> getEventByOwnerShort(@PathVariable Long userId,
                                                     @RequestParam(defaultValue = "0") Integer from,
                                                     @RequestParam(defaultValue = "10") Integer size) {
-        //log.info("Добавлено событие {}", eventNewDto);
         return eventService.getEventByOwnerShort(userId, from, size);
     }
 
     @GetMapping("/{eventId}")
     public EventFullDto getEventByOwnerFull(@PathVariable Long userId, @PathVariable Long eventId) {
-        //log.info("Добавлено событие {}", eventNewDto);
         return eventService.getEventByOwnerFull(userId, eventId);
     }
 
@@ -56,7 +54,6 @@ public class EventPrivateController {
 
     @GetMapping("/{eventId}/requests")
     public List<ParticipationRequestDto> getRequestsByOwnerEvent(@PathVariable Long userId, @PathVariable Long eventId) {
-        //log.info("Добавлено событие {}", eventNewDto);
         return requestService.getRequestsByOwnerEvent(userId, eventId);
     }
 

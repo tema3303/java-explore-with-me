@@ -253,7 +253,6 @@ public class EventServiceImpl implements EventService {
         return EventMapper.toEventFullDto(event);
     }
 
-
     private void changeEventStateIfNecessary(Event event, StateActionUser userActionState) {
         if (userActionState != null) {
             changeEventState(event, userActionState);
