@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.ewm.stats.dto.HitDto;
 import ru.practicum.ewm.stats.dto.StatsDto;
+import ru.practicum.ewm.stats.server.error.BadTimeException;
 import ru.practicum.ewm.stats.server.model.Hit;
 import ru.practicum.ewm.stats.server.model.HitMapper;
 import ru.practicum.ewm.stats.server.repository.HitRepository;
@@ -29,6 +30,9 @@ public class StatServiceImpl implements StatsService {
     @Override
     public List<StatsDto> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
         List<StatsDto> stats;
+        if (start.isAfter(end)) {
+            throw new BadTimeException("неправильно указано время");
+        }
         if (unique) {
             if (uris == null || uris.isEmpty()) {
                 stats = hitRepository.findAllUniqueIpWithoutUris(start, end);
