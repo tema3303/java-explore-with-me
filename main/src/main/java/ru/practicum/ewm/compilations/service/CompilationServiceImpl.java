@@ -21,8 +21,7 @@ import ru.practicum.ewm.events.model.EventMapper;
 import ru.practicum.ewm.events.model.dto.EventShortDto;
 import ru.practicum.ewm.events.repository.EventRepository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -40,17 +39,18 @@ public class CompilationServiceImpl implements CompilationService {
         if (newCompilationDto.getPinned() == null) {
             newCompilationDto.setPinned(false);
         }
-        Compilation compilation = CompilationMapper.toCompilation(newCompilationDto);
-        List<Event> events = (newCompilationDto.getEvents() != null) ?
-                eventRepository.findAllByIdIn(newCompilationDto.getEvents()) : null;
+        Compilation compilation;
+        Set<Event> events = new HashSet<>();
+        List<EventShortDto> eventShort = Optional.ofNullable(newCompilationDto.getEvents())
+                .map(eventRepository::findAllById)
+                .stream()
+                .flatMap(Collection::stream)
+                .map(EventMapper::toEventShortDto)
+                .collect(Collectors.toList());
+        compilation = CompilationMapper.toCompilation(newCompilationDto);
         compilation.setEvents(events);
-        List<EventShortDto> eventShort = new ArrayList<>();
-        if (events != null) {
-            eventShort = events.stream()
-                    .map(EventMapper::toEventShortDto)
-                    .collect(Collectors.toList());
-        }
-        return CompilationMapper.toCompilationDto(compilationRepository.save(compilation), eventShort);
+        Compilation newCompilation = compilationRepository.save(compilation);
+        return CompilationMapper.toCompilationDto(compilationRepository.save(newCompilation), eventShort);
     }
 
     @Override
@@ -65,11 +65,16 @@ public class CompilationServiceImpl implements CompilationService {
     public CompilationDto updateCompilation(Long compId, UpdateCompilationRequest newCompilation) {
         Compilation oldCompilation = compilationRepository.findById(compId).orElseThrow(
                 () -> new NotFoundException("Нет данных", compId));
-        List<Event> events = (newCompilation.getEvents() != null) ?
-                eventRepository.findAllByIdIn(newCompilation.getEvents()) : null;
-        oldCompilation.setEvents(events);
-        List<EventShortDto> eventShort = new ArrayList<>();
-        if (events != null) {
+        Set<Event> events;
+        List<EventShortDto> eventShort;
+        if (newCompilation.getEvents() != null) {
+            events = new HashSet<>(eventRepository.findAllById(newCompilation.getEvents()));
+            eventShort = events.stream()
+                    .map(EventMapper::toEventShortDto)
+                    .collect(Collectors.toList());
+            oldCompilation.setEvents(events);
+        } else {
+            events = oldCompilation.getEvents();
             eventShort = events.stream()
                     .map(EventMapper::toEventShortDto)
                     .collect(Collectors.toList());
@@ -93,7 +98,7 @@ public class CompilationServiceImpl implements CompilationService {
         List<Compilation> compilations = compilationRepository.findAll(expression, pagination).getContent();
         List<Event> events = new ArrayList<>();
         for (Compilation compilation : compilations) {
-            List<Event> compilationEvents = compilation.getEvents();
+            Set<Event> compilationEvents = compilation.getEvents();
             for (Event event : compilationEvents) {
                 events.add(event);
             }
