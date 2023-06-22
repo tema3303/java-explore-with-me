@@ -78,6 +78,7 @@ public class EventServiceImpl implements EventService {
         event.setCreatedOn(LocalDateTime.now());
         event.setState(State.PENDING);
         event.setConfirmedRequests(0);
+        event.setViews(0L);
         return EventMapper.toEventFullDto(eventRepository.save(event));
     }
 
@@ -248,7 +249,7 @@ public class EventServiceImpl implements EventService {
         if (event.getState() != State.PUBLISHED) {
             throw new NotFoundException("Нет данных", id);
         }
-        setViewsForEvents(List.of(event));
+        event.setViews(event.getViews() + 1);
         return EventMapper.toEventFullDto(event);
     }
 
