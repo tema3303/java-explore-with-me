@@ -6,12 +6,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.ewm.error.exceptions.NotFoundException;
+import ru.practicum.ewm.error.exceptions.ValidationException;
 import ru.practicum.ewm.users.repository.UserRepository;
 import ru.practicum.ewm.users.model.User;
 import ru.practicum.ewm.users.model.UserMapper;
 import ru.practicum.ewm.users.model.dto.UserDto;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,6 +27,9 @@ public class UserServiceImpl implements UserService {
     public List<UserDto> getUsers(List<Long> usersId, Integer from, Integer size) {
         List<User> users;
         if (usersId == null) {
+            if (Objects.isNull(from) || Objects.isNull(size)) {
+                throw new ValidationException("Значения не могут быть null");
+            }
             Pageable pagination = PageRequest.of(from / size, size);
             users = userRepository.findAll(pagination).getContent();
         } else {

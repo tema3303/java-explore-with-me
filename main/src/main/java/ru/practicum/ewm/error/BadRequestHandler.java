@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 @Slf4j
 public class BadRequestHandler {
-    private static final String RESPONSE_STATUS = HttpStatus.BAD_REQUEST.name();
     private static final String REASON_BAD_REQUEST = "Incorrectly made request.";
 
     @ExceptionHandler
@@ -24,7 +23,7 @@ public class BadRequestHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON_BAD_REQUEST)
-                .status(RESPONSE_STATUS)
+                .status(HttpStatus.BAD_REQUEST.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }
@@ -35,7 +34,7 @@ public class BadRequestHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON_BAD_REQUEST)
-                .status(RESPONSE_STATUS)
+                .status(HttpStatus.BAD_REQUEST.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }
@@ -46,7 +45,7 @@ public class BadRequestHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON_BAD_REQUEST)
-                .status(RESPONSE_STATUS)
+                .status(HttpStatus.BAD_REQUEST.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }

@@ -53,8 +53,8 @@ public class EventServiceImpl implements EventService {
     @Override
     public List<EventShortDto> getEventByOwnerShort(Long usersId, Integer from, Integer size) {
         List<Event> events;
-        if (from < 0 || size <= 0) {
-            throw new ValidationException("Значения не могут быть отрицательными");
+        if (Objects.isNull(from) || Objects.isNull(size)) {
+            throw new ValidationException("Значения не могут null");
         }
         Pageable pagination = PageRequest.of(from / size, size);
         events = eventRepository.findAllByInitiatorId(usersId, pagination);
@@ -138,6 +138,9 @@ public class EventServiceImpl implements EventService {
         if (rangeStart != null && rangeEnd != null && rangeStart.isAfter(rangeEnd)) {
             throw new ValidationException("Start date must be before End");
         }
+        if (Objects.isNull(from) || Objects.isNull(size)) {
+            throw new ValidationException("Значения не могут null");
+        }
         Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);
         if (users != null) {
@@ -218,6 +221,9 @@ public class EventServiceImpl implements EventService {
                                          String sort, Integer from, Integer size, HttpServletRequest request) {
         if (rangeStart != null && rangeEnd != null && rangeStart.isAfter(rangeEnd)) {
             throw new ValidationException("Start date must be before End");
+        }
+        if (Objects.isNull(from) || Objects.isNull(size)) {
+            throw new ValidationException("Значения не могут null");
         }
         Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);

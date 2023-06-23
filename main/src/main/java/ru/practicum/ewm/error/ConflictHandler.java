@@ -16,9 +16,6 @@ import java.time.LocalDateTime;
 @ResponseStatus(HttpStatus.CONFLICT)
 @Slf4j
 public class ConflictHandler {
-
-    private static final String RESPONSE_STATUS_CONFLICT = HttpStatus.CONFLICT.name();
-    private static final String RESPONSE_STATUS_FORBIDDEN = HttpStatus.FORBIDDEN.name();
     private static final String REASON_INTEGRITY_CONFLICT = "Integrity constraint has been violated.";
     private static final String REASON_INTEGRITY_FORBIDDEN = "For the requested operation the conditions are not met.";
 
@@ -29,7 +26,7 @@ public class ConflictHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON_INTEGRITY_CONFLICT)
-                .status(RESPONSE_STATUS_CONFLICT)
+                .status(HttpStatus.CONFLICT.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }
@@ -40,7 +37,7 @@ public class ConflictHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON_INTEGRITY_FORBIDDEN)
-                .status(RESPONSE_STATUS_FORBIDDEN)
+                .status(HttpStatus.FORBIDDEN.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }
@@ -51,7 +48,7 @@ public class ConflictHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON_INTEGRITY_CONFLICT)
-                .status(RESPONSE_STATUS_CONFLICT)
+                .status(HttpStatus.CONFLICT.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }
@@ -62,7 +59,7 @@ public class ConflictHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON_INTEGRITY_CONFLICT)
-                .status(RESPONSE_STATUS_CONFLICT)
+                .status(HttpStatus.CONFLICT.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }

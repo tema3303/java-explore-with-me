@@ -16,6 +16,7 @@ import ru.practicum.ewm.compilations.model.dto.NewCompilationDto;
 import ru.practicum.ewm.compilations.model.dto.UpdateCompilationRequest;
 import ru.practicum.ewm.compilations.repository.CompilationRepository;
 import ru.practicum.ewm.error.exceptions.NotFoundException;
+import ru.practicum.ewm.error.exceptions.ValidationException;
 import ru.practicum.ewm.events.model.Event;
 import ru.practicum.ewm.events.model.EventMapper;
 import ru.practicum.ewm.events.model.dto.EventShortDto;
@@ -90,6 +91,9 @@ public class CompilationServiceImpl implements CompilationService {
 
     @Override
     public List<CompilationDto> getCompilations(Boolean pinned, Integer from, Integer size) {
+        if (from < 0 || size <= 0 || Objects.isNull(from) || Objects.isNull(size)) {
+            throw new ValidationException("Значения не могут быть отрицательными и null");
+        }
         Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);
         if (pinned != null) {

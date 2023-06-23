@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Slf4j
 public class NotFoundHandler {
 
-    private static final String RESPONSE_STATUS = HttpStatus.NOT_FOUND.name();
     private static final String REASON = "The required object was not found.";
 
     @ExceptionHandler
@@ -23,7 +22,7 @@ public class NotFoundHandler {
         return ApiError.builder()
                 .message(message)
                 .reason(REASON)
-                .status(RESPONSE_STATUS)
+                .status(HttpStatus.NOT_FOUND.name())
                 .timestamp(LocalDateTime.now())
                 .build();
     }

@@ -14,6 +14,7 @@ import ru.practicum.ewm.error.exceptions.NotFoundException;
 import ru.practicum.ewm.error.exceptions.ValidationException;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -55,8 +56,8 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryDto> getAllCategories(Integer from, Integer size) {
         List<Category> categories;
-        if (from < 0 || size <= 0) {
-            throw new ValidationException("Значения не могут быть отрицательными");
+        if (Objects.isNull(from) || Objects.isNull(size)) {
+            throw new ValidationException("Значения не могут быть отрицательными и null");
         }
         Pageable pagination = PageRequest.of(from / size, size);
         categories = categoryRepository.findAll(pagination).getContent();
