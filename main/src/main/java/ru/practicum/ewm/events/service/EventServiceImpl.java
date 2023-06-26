@@ -179,7 +179,7 @@ public class EventServiceImpl implements EventService {
         Category category = categoryId != null ? CategoryMapper.toCategory(categoryService.getCategoryById(newEvent.getCategory())) : null;
         Event oldEvent = eventRepository.findById(eventId).orElseThrow();
         if (!oldEvent.getState().equals(State.PENDING) && stateActionAdmin.equals(StateActionAdmin.PUBLISH_EVENT)) {
-            throw new EventNotPossibleChange("Cannot publish the event because it's not in the right state: PUBLISHED");
+            throw new EventNotPossibleChange("Cannot publish the event because it's not in the right state: PENDING");
         }
         if (oldEvent.getState().equals(State.PUBLISHED) && stateActionAdmin.equals(StateActionAdmin.REJECT_EVENT)) {
             throw new EventNotPossibleChange("Cannot publish the event because it's not in the right state: PUBLISHED");
