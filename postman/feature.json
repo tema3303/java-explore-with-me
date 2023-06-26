@@ -47,7 +47,7 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "140"
 						},
 						{
 							"key": "eventId",
@@ -59,7 +59,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать пользователя 1",
+			"name": "Создать пользователя 134",
 			"event": [
 				{
 					"listen": "test",
@@ -101,7 +101,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать пользователя 2",
+			"name": "Создать пользователя 135",
 			"event": [
 				{
 					"listen": "test",
@@ -143,7 +143,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать пользователя 3",
+			"name": "Создать пользователя 136",
 			"event": [
 				{
 					"listen": "test",
@@ -185,7 +185,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать пользователя 4",
+			"name": "Создать пользователя 137",
 			"event": [
 				{
 					"listen": "test",
@@ -227,7 +227,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать пользователя 5",
+			"name": "Создать пользователя 138",
 			"event": [
 				{
 					"listen": "test",
@@ -322,7 +322,7 @@
 						},
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "200"
 						}
 					]
 				}
@@ -330,7 +330,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать категорию 1",
+			"name": "Создать категорию 118",
 			"event": [
 				{
 					"listen": "test",
@@ -372,7 +372,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать ивент 1",
+			"name": "Создать ивент 103",
 			"event": [
 				{
 					"listen": "test",
@@ -415,7 +415,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать ивент 2",
+			"name": "Создать ивент 104",
 			"event": [
 				{
 					"listen": "test",
@@ -458,7 +458,7 @@
 			"response": []
 		},
 		{
-			"name": "Создать ивент 3",
+			"name": "Создать ивент 105",
 			"event": [
 				{
 					"listen": "test",
@@ -611,11 +611,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "134"
 						},
 						{
 							"key": "eventId",
-							"value": "2"
+							"value": "104"
 						}
 					]
 				}
@@ -623,7 +623,7 @@
 			"response": []
 		},
 		{
-			"name": "Публикация события 1",
+			"name": "Публикация события 103",
 			"event": [
 				{
 					"listen": "test",
@@ -664,7 +664,7 @@
 					"variable": [
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					]
 				}
@@ -672,7 +672,7 @@
 			"response": []
 		},
 		{
-			"name": "Публикация события 2",
+			"name": "Публикация события 104",
 			"event": [
 				{
 					"listen": "test",
@@ -713,7 +713,7 @@
 					"variable": [
 						{
 							"key": "eventId",
-							"value": "2"
+							"value": "104"
 						}
 					]
 				}
@@ -721,7 +721,7 @@
 			"response": []
 		},
 		{
-			"name": "Публикация события 3",
+			"name": "Публикация события 105",
 			"event": [
 				{
 					"listen": "test",
@@ -762,7 +762,7 @@
 					"variable": [
 						{
 							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					]
 				}
@@ -799,7 +799,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=1",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -811,13 +811,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "3"
+							"value": "136"
 						}
 					]
 				}
@@ -854,7 +854,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=1",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -866,13 +866,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "2"
+							"value": "135"
 						}
 					]
 				}
@@ -909,7 +909,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=1",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -921,13 +921,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "4"
+							"value": "137"
 						}
 					]
 				}
@@ -964,7 +964,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=1",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -976,13 +976,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "5"
+							"value": "138"
 						}
 					]
 				}
@@ -1019,7 +1019,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=2",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -1031,13 +1031,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "2"
+							"value": "103"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "134"
 						}
 					]
 				}
@@ -1074,7 +1074,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=2",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=104",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -1086,13 +1086,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "2"
+							"value": "104"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "3"
+							"value": "136"
 						}
 					]
 				}
@@ -1129,7 +1129,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=2",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=104",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -1141,13 +1141,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "2"
+							"value": "104"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "4"
+							"value": "137"
 						}
 					]
 				}
@@ -1184,7 +1184,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=3",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -1196,13 +1196,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "134"
 						}
 					]
 				}
@@ -1239,7 +1239,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=3",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -1251,7 +1251,7 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					],
 					"variable": [
@@ -1294,7 +1294,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=3",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -1306,13 +1306,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "4"
+							"value": "137"
 						}
 					]
 				}
@@ -1349,7 +1349,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=3",
+					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -1361,13 +1361,13 @@
 					"query": [
 						{
 							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					],
 					"variable": [
 						{
 							"key": "userId",
-							"value": "5"
+							"value": "138"
 						}
 					]
 				}
@@ -1390,8 +1390,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(3);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(1);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(136);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
 							"});"
 						],
@@ -1426,11 +1426,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "3"
+							"value": "136"
 						},
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					]
 				}
@@ -1453,8 +1453,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(4);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(1);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(137);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
 							"});"
 						],
@@ -1489,11 +1489,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "4"
+							"value": "137"
 						},
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					]
 				}
@@ -1516,8 +1516,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(2);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(1);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(135);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
 							"});"
 						],
@@ -1558,11 +1558,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "2"
+							"value": "135"
 						},
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					]
 				}
@@ -1585,8 +1585,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(5);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(1);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(138);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
 							"});"
 						],
@@ -1627,74 +1627,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "5"
+							"value": "138"
 						},
 						{
 							"key": "eventId",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить лайк ивенту 2 от юзера 1",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function() {\r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(1);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(2);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/likes/events/:eventId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"likes",
-						"events",
-						":eventId"
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "1"
-						},
-						{
-							"key": "eventId",
-							"value": "2"
+							"value": "103"
 						}
 					]
 				}
@@ -1717,8 +1654,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(3);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(2);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(136);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(104);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
 							"});"
 						],
@@ -1753,11 +1690,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "3"
+							"value": "136"
 						},
 						{
 							"key": "eventId",
-							"value": "2"
+							"value": "104"
 						}
 					]
 				}
@@ -1780,8 +1717,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(4);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(2);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(137);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(104);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
 							"});"
 						],
@@ -1816,11 +1753,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "4"
+							"value": "137"
 						},
 						{
 							"key": "eventId",
-							"value": "2"
+							"value": "104"
 						}
 					]
 				}
@@ -1843,8 +1780,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(5);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(3);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(138);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(105);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
 							"});"
 						],
@@ -1885,11 +1822,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "5"
+							"value": "138"
 						},
 						{
 							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					]
 				}
@@ -1912,8 +1849,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(4);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(3);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(137);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(105);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
 							"});"
 						],
@@ -1954,80 +1891,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "4"
+							"value": "137"
 						},
 						{
 							"key": "eventId",
-							"value": "3"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить дизлайк ивенту 3 от юзера 3",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function() {\r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(3);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(3);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/likes/events/:eventId?isPositive=false",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"likes",
-						"events",
-						":eventId"
-					],
-					"query": [
-						{
-							"key": "isPositive",
-							"value": "false"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "3"
-						},
-						{
-							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					]
 				}
@@ -2050,8 +1918,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(1);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(3);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(134);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(105);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
 							"});"
 						],
@@ -2092,11 +1960,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "134"
 						},
 						{
 							"key": "eventId",
-							"value": "3"
+							"value": "105"
 						}
 					]
 				}
@@ -2120,14 +1988,6 @@
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData[0].id, '\"id\" 1 юзера').to.eql(2);\r",
 							"    pm.expect(jsonData[0].rate, '\"rate\" 1 юзера').to.eql(-1);\r",
-							"    pm.expect(jsonData[1].id, '\"id\" 2 юзера').to.eql(3);\r",
-							"    pm.expect(jsonData[1].rate, '\"rate\" 2 юзера').to.eql(0);\r",
-							"    pm.expect(jsonData[2].id, '\"id\" 3 юзера').to.eql(4);\r",
-							"    pm.expect(jsonData[2].rate, '\"rate\" 3 юзера').to.eql(0);\r",
-							"    pm.expect(jsonData[3].id, '\"id\" 4 юзера').to.eql(5);\r",
-							"    pm.expect(jsonData[3].rate, '\"rate\" 4 юзера').to.eql(0);\r",
-							"    pm.expect(jsonData[4].id, '\"id\" 5 юзера').to.eql(1);\r",
-							"    pm.expect(jsonData[4].rate, '\"rate\" юзера').to.eql(0);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -2150,7 +2010,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/top?sort=ASC",
+					"raw": "{{baseUrl}}/users/top?size=1&sort=ASC",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -2159,6 +2019,10 @@
 						"top"
 					],
 					"query": [
+						{
+							"key": "size",
+							"value": "1"
+						},
 						{
 							"key": "sort",
 							"value": "ASC"
@@ -2183,8 +2047,8 @@
 							"\r",
 							"pm.test(\"Test get top events\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(2);\r",
-							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(3);\r",
+							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(104);\r",
+							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(2);\r",
 							"    pm.expect(jsonData[1].id, '\"id\" 2 ивента').to.eql(1);\r",
 							"    pm.expect(jsonData[1].rate, '\"rate\" 2 ивента').to.eql(0);\r",
 							"});"
@@ -2209,7 +2073,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/events/top?size=2&rate=ASC",
+					"raw": "{{baseUrl}}/events/top?size=1&rate=ASC",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -2220,7 +2084,7 @@
 					"query": [
 						{
 							"key": "size",
-							"value": "2"
+							"value": "1"
 						},
 						{
 							"key": "rate",
@@ -2340,11 +2204,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "2"
+							"value": "135"
 						},
 						{
 							"key": "eventId",
-							"value": "1"
+							"value": "103"
 						}
 					]
 				}
@@ -2366,9 +2230,9 @@
 							"\r",
 							"pm.test(\"Test get top events\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(2);\r",
-							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(3);\r",
-							"    pm.expect(jsonData[1].id, '\"id\" 2 ивента').to.eql(1);\r",
+							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(104);\r",
+							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(2);\r",
+							"    pm.expect(jsonData[1].id, '\"id\" 2 ивента').to.eql(103);\r",
 							"    pm.expect(jsonData[1].rate, '\"rate\" 2 ивента').to.eql(1);\r",
 							"});"
 						],
