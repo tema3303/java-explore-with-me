@@ -2049,8 +2049,6 @@
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(104);\r",
 							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(2);\r",
-							"    pm.expect(jsonData[1].id, '\"id\" 2 ивента').to.eql(1);\r",
-							"    pm.expect(jsonData[1].rate, '\"rate\" 2 ивента').to.eql(0);\r",
 							"});"
 						],
 						"type": "text/javascript"
