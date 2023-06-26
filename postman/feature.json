@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "ebc395c5-fcf8-4974-8b9c-11ed2dadb87f",
+		"_postman_id": "f41f7624-7f35-4d5b-ad75-7136743251ec",
 		"name": "feature",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25475634"
 	},
 	"item": [
 		{
-			"name": "Добавить лайк,  когда нет юзера",
+			"name": "Добавить лайк, когда нет юзера",
 			"event": [
 				{
 					"listen": "test",
@@ -53,216 +53,6 @@
 							"key": "eventId",
 							"value": "1"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать пользователя 134",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Artem\",\r\n    \"email\": \"artem@gmail.ru\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать пользователя 135",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"oleg\",\r\n    \"email\": \"oleg@gmail.ru\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать пользователя 136",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"max\",\r\n    \"email\": \"max@gmail.ru\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать пользователя 137",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"ivan\",\r\n    \"email\": \"ivan@gmail.ru\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать пользователя 138",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"olga\",\r\n    \"email\": \"olga@gmail.ru\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"users"
 					]
 				}
 			},
@@ -322,179 +112,8 @@
 						},
 						{
 							"key": "eventId",
-							"value": "200"
+							"value": "190"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать категорию 118",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Сategory\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/categories",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"categories"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать ивент 103",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"annotation\": \"annotation for event 1\",\r\n    \"category\": 1,\r\n    \"description\": \"description for event 1\",\r\n    \"eventDate\": \"2023-12-01 12:00:00\",\r\n    \"location\": {\r\n        \"lat\": 37.484754,\r\n        \"lon\": 63.111711\r\n    },\r\n    \"title\": \"event 1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/1/events",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"1",
-						"events"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать ивент 104",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"annotation\": \"annotation for event 2\",\r\n    \"category\": 1,\r\n    \"description\": \"description for event 2\",\r\n    \"eventDate\": \"2024-01-02 12:00:00\",\r\n    \"location\": {\r\n        \"lat\": 57.477415,\r\n        \"lon\": 32.181888\r\n    },\r\n    \"title\": \"event 2\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/2/events",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"2",
-						"events"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Создать ивент 105",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);  \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"annotation\": \"annotation for event 3\",\r\n    \"category\": 1,\r\n    \"description\": \"description for event 3\",\r\n    \"eventDate\": \"2024-01-03 12:00:00\",\r\n    \"location\": {\r\n        \"lat\": 14.454577,\r\n        \"lon\": 44.484417\r\n    },\r\n    \"title\": \"event 3\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/2/events",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"2",
-						"events"
 					]
 				}
 			},
@@ -550,7 +169,7 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "2"
 						},
 						{
 							"key": "eventId",
@@ -611,11 +230,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "134"
+							"value": "124"
 						},
 						{
 							"key": "eventId",
-							"value": "104"
+							"value": "97"
 						}
 					]
 				}
@@ -623,759 +242,7 @@
 			"response": []
 		},
 		{
-			"name": "Публикация события 103",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
-							"    pm.response.to.be.ok;    \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"stateAction\": \"PUBLISH_EVENT\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/events/:eventId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"events",
-						":eventId"
-					],
-					"variable": [
-						{
-							"key": "eventId",
-							"value": "103"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Публикация события 104",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
-							"    pm.response.to.be.ok;    \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"stateAction\": \"PUBLISH_EVENT\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/events/:eventId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"events",
-						":eventId"
-					],
-					"variable": [
-						{
-							"key": "eventId",
-							"value": "104"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Публикация события 105",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
-							"    pm.response.to.be.ok;    \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"stateAction\": \"PUBLISH_EVENT\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/admin/events/:eventId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"admin",
-						"events",
-						":eventId"
-					],
-					"variable": [
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 1, юзер 3",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "103"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "136"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 1, юзер 2",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "103"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "135"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 1, юзер 4",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "103"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "137"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 1, юзер 5",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "103"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "138"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 2, юзер 1",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "103"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "134"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 2, юзер 3",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=104",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "104"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "136"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 2, юзер 4",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=104",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "104"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "137"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 3, юзер 1",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "134"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 3, юзер 3",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "3"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 3, юзер 4",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "137"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить запрос на участие ивент 3, юзер 5",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function () {\r",
-							"    pm.response.to.have.status(201);   \r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/requests?eventId=105",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"requests"
-					],
-					"query": [
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "138"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить лайк ивенту 1 от юзера 3",
+			"name": "Добавить лайк ивенту 85 от юзера 102",
 			"event": [
 				{
 					"listen": "test",
@@ -1390,8 +257,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(136);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(102);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(85);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
 							"});"
 						],
@@ -1426,11 +293,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "136"
+							"value": "102"
 						},
 						{
 							"key": "eventId",
-							"value": "103"
+							"value": "85"
 						}
 					]
 				}
@@ -1438,7 +305,7 @@
 			"response": []
 		},
 		{
-			"name": "Добавить лайк ивенту 1 от юзера 4",
+			"name": "Добавить лайк ивенту 5 от юзера 13",
 			"event": [
 				{
 					"listen": "test",
@@ -1453,8 +320,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(137);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(13);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(5);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
 							"});"
 						],
@@ -1489,11 +356,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "137"
+							"value": "13"
 						},
 						{
 							"key": "eventId",
-							"value": "103"
+							"value": "5"
 						}
 					]
 				}
@@ -1501,7 +368,7 @@
 			"response": []
 		},
 		{
-			"name": "Добавить дизлайк ивенту 1 от юзера 2",
+			"name": "Добавить дизлайк ивенту 7 от юзера 16",
 			"event": [
 				{
 					"listen": "test",
@@ -1516,8 +383,8 @@
 							"pm.test(\"Test create like\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(135);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
+							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(16);\r",
+							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(7);\r",
 							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
 							"});"
 						],
@@ -1558,11 +425,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "135"
+							"value": "16"
 						},
 						{
 							"key": "eventId",
-							"value": "103"
+							"value": "7"
 						}
 					]
 				}
@@ -1570,7 +437,7 @@
 			"response": []
 		},
 		{
-			"name": "Добавить дизлайк ивенту 1 от юзера 5",
+			"name": "Добавить дизлайк ивенту 83 от юзера 98",
 			"event": [
 				{
 					"listen": "test",
@@ -1580,14 +447,6 @@
 							"    pm.response.to.be.withBody;\r",
 							"    pm.response.to.be.json;\r",
 							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(138);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(103);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1627,11 +486,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "138"
+							"value": "98"
 						},
 						{
 							"key": "eventId",
-							"value": "103"
+							"value": "83"
 						}
 					]
 				}
@@ -1639,340 +498,7 @@
 			"response": []
 		},
 		{
-			"name": "Добавить лайк ивенту 2 от юзера 3",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function() {\r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(136);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(104);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/likes/events/:eventId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"likes",
-						"events",
-						":eventId"
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "136"
-						},
-						{
-							"key": "eventId",
-							"value": "104"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить лайк ивенту 2 от юзера 4",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function() {\r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(137);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(104);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(true);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/likes/events/:eventId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"likes",
-						"events",
-						":eventId"
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "137"
-						},
-						{
-							"key": "eventId",
-							"value": "104"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить дизлайк ивенту 3 от юзера 5",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function() {\r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(138);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(105);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/likes/events/:eventId?isPositive=false",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"likes",
-						"events",
-						":eventId"
-					],
-					"query": [
-						{
-							"key": "isPositive",
-							"value": "false"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "138"
-						},
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить дизлайк ивенту 3 от юзера 4",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function() {\r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(137);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(105);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/likes/events/:eventId?isPositive=false",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"likes",
-						"events",
-						":eventId"
-					],
-					"query": [
-						{
-							"key": "isPositive",
-							"value": "false"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "137"
-						},
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Добавить дизлайк ивенту 3 от юзера 1",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 201 и данные в формате json\", function() {\r",
-							"    pm.response.to.be.withBody;\r",
-							"    pm.response.to.be.json;\r",
-							"    pm.expect(pm.response.code).to.eql(201)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test create like\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id, '\"id\" содержать').to.not.eql(null);\r",
-							"    pm.expect(jsonData.userId, '\"userId\" содержать').to.eql(134);\r",
-							"    pm.expect(jsonData.eventId, '\"eventId\" содержать').to.eql(105);\r",
-							"    pm.expect(jsonData.isPositive, '\"isPositive\" содержать').to.eql(false);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/:userId/likes/events/:eventId?isPositive=false",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						":userId",
-						"likes",
-						"events",
-						":eventId"
-					],
-					"query": [
-						{
-							"key": "isPositive",
-							"value": "false"
-						}
-					],
-					"variable": [
-						{
-							"key": "userId",
-							"value": "134"
-						},
-						{
-							"key": "eventId",
-							"value": "105"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Получить топ по юзерам ASC",
+			"name": "Получить топ по юзерам ASC size 2",
 			"event": [
 				{
 					"listen": "test",
@@ -1986,8 +512,10 @@
 							"\r",
 							"pm.test(\"Test get top users\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].id, '\"id\" 1 юзера').to.eql(2);\r",
+							"    pm.expect(jsonData[0].id, '\"id\" 1 юзера').to.eql(15);\r",
 							"    pm.expect(jsonData[0].rate, '\"rate\" 1 юзера').to.eql(-1);\r",
+							"    pm.expect(jsonData[1].id, '\"id\" 2 юзера').to.eql(97);\r",
+							"    pm.expect(jsonData[1].rate, '\"rate\" 2 юзера').to.eql(-1);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -2010,7 +538,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/top?size=1&sort=ASC",
+					"raw": "{{baseUrl}}/users/top?size=2&sort=ASC",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -2021,7 +549,7 @@
 					"query": [
 						{
 							"key": "size",
-							"value": "1"
+							"value": "2"
 						},
 						{
 							"key": "sort",
@@ -2033,7 +561,7 @@
 			"response": []
 		},
 		{
-			"name": "Получить топ по ивентам ASC",
+			"name": "Получить топ по ивентам ASC size 2",
 			"event": [
 				{
 					"listen": "test",
@@ -2047,8 +575,10 @@
 							"\r",
 							"pm.test(\"Test get top events\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(104);\r",
-							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(2);\r",
+							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(5);\r",
+							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(1);\r",
+							"    pm.expect(jsonData[1].id, '\"id\" 2 ивента').to.eql(85);\r",
+							"    pm.expect(jsonData[1].rate, '\"rate\" 2 ивента').to.eql(1);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -2071,7 +601,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/events/top?size=1&rate=ASC",
+					"raw": "{{baseUrl}}/events/top?size=2&rate=ASC",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -2082,7 +612,7 @@
 					"query": [
 						{
 							"key": "size",
-							"value": "1"
+							"value": "2"
 						},
 						{
 							"key": "rate",
@@ -2161,7 +691,7 @@
 			"response": []
 		},
 		{
-			"name": "Удалить дизлайк ивенту 1 от юзера 2",
+			"name": "Удалить лайк ивенту 185 от юзера 102",
 			"event": [
 				{
 					"listen": "test",
@@ -2202,11 +732,11 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "135"
+							"value": "102"
 						},
 						{
 							"key": "eventId",
-							"value": "103"
+							"value": "85"
 						}
 					]
 				}
@@ -2214,7 +744,7 @@
 			"response": []
 		},
 		{
-			"name": "Получить топ по ивентам ASC size 2",
+			"name": "Получить топ по ивентам ASC size 1",
 			"event": [
 				{
 					"listen": "test",
@@ -2228,10 +758,8 @@
 							"\r",
 							"pm.test(\"Test get top events\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(104);\r",
-							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(2);\r",
-							"    pm.expect(jsonData[1].id, '\"id\" 2 ивента').to.eql(103);\r",
-							"    pm.expect(jsonData[1].rate, '\"rate\" 2 ивента').to.eql(1);\r",
+							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(5);\r",
+							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(1);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -2254,7 +782,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/events/top?size=2&rate=ASC",
+					"raw": "{{baseUrl}}/events/top?size=1&rate=ASC",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -2265,7 +793,7 @@
 					"query": [
 						{
 							"key": "size",
-							"value": "2"
+							"value": "1"
 						},
 						{
 							"key": "rate",
@@ -2277,7 +805,7 @@
 			"response": []
 		},
 		{
-			"name": "Получить топ по юзерам DESC size 2",
+			"name": "Получить топ по юзерам DESC size 1",
 			"event": [
 				{
 					"listen": "test",
@@ -2291,10 +819,8 @@
 							"\r",
 							"pm.test(\"Test get top users\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].id, '\"id\" 1 юзера').to.eql(1);\r",
+							"    pm.expect(jsonData[0].id, '\"id\" 1 юзера').to.eql(12);\r",
 							"    pm.expect(jsonData[0].rate, '\"rate\" 1 юзера').to.eql(1);\r",
-							"    pm.expect(jsonData[1].id, '\"id\" 2 юзера').to.eql(4);\r",
-							"    pm.expect(jsonData[1].rate, '\"rate\" 2 юзера').to.eql(0);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -2317,7 +843,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/top?size=2",
+					"raw": "{{baseUrl}}/users/top?size=1",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -2328,7 +854,7 @@
 					"query": [
 						{
 							"key": "size",
-							"value": "2"
+							"value": "1"
 						}
 					]
 				}
