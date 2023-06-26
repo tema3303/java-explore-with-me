@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import ru.practicum.ewm.events.model.Event;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface EventRepository extends JpaRepository<Event, Long>, QuerydslPredicateExecutor<Event> {
@@ -12,4 +13,6 @@ public interface EventRepository extends JpaRepository<Event, Long>, QuerydslPre
     List<Event> findAllByInitiatorId(Long userId, Pageable pageable);
 
     Event findByIdAndInitiatorId(Long eventId, Long userId);
+
+    Boolean existsByIdAndEventDateBefore(Long eventId, LocalDateTime time);
 }

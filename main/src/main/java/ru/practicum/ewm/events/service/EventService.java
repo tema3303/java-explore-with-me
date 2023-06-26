@@ -26,4 +26,6 @@ public interface EventService {
                                   Integer from, Integer size, HttpServletRequest request);
 
     EventFullDto getEventById(Long id, HttpServletRequest request);
+
+    List<EventRateDto> getTopEvent(Integer size, String sort);
 }

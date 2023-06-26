@@ -3,10 +3,12 @@ package ru.practicum.ewm.users.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.ewm.error.exceptions.NotFoundException;
 import ru.practicum.ewm.error.exceptions.ValidationException;
+import ru.practicum.ewm.users.model.dto.UserRateDto;
 import ru.practicum.ewm.users.repository.UserRepository;
 import ru.practicum.ewm.users.model.User;
 import ru.practicum.ewm.users.model.UserMapper;
@@ -44,6 +46,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public UserDto addUser(UserDto userDto) {
         User user = UserMapper.toUser(userDto);
+        user.setRate(0);
         return UserMapper.toUserDto(userRepository.save(user));
     }
 
@@ -54,5 +57,21 @@ public class UserServiceImpl implements UserService {
             throw new NotFoundException("User", userId);
         }
         userRepository.deleteById(userId);
+    }
+
+    @Override
+    public List<UserRateDto> getTopUsers(Integer size, String sort) {
+        Pageable pagination;
+        if (sort.equals("ASC")) {
+            pagination = PageRequest.of(0, size, Sort.by("rate").ascending());
+        } else if (sort.equals("DESC")) {
+            pagination = PageRequest.of(0, size, Sort.by("rate").descending());
+        } else {
+            throw new ValidationException("Неккоректное правило сортировки");
+        }
+        List<User> resultEvents = userRepository.findAll(pagination).getContent();
+        return resultEvents.stream()
+                .map(UserMapper::toUserRateDto)
+                .collect(Collectors.toList());
     }
 }

@@ -60,4 +60,10 @@ public class Event {
     private String title;
     @Column
     private Long views;
+    @Column
+    private Integer likes;
+    @Column
+    private Integer dislikes;
+    @Column
+    private Integer rate;
 }

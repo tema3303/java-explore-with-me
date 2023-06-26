@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.ewm.events.model.dto.EventFullDto;
+import ru.practicum.ewm.events.model.dto.EventRateDto;
 import ru.practicum.ewm.events.model.dto.EventShortDto;
 import ru.practicum.ewm.events.service.EventService;
 import ru.practicum.ewm.stats.client.HitClient;
@@ -45,5 +46,11 @@ public class EventPublicController {
         request.setAttribute("app_name", "main application");
         hitClient.createHit(request);
         return eventService.getEventById(id, request);
+    }
+
+    @GetMapping("/top")
+    public List<EventRateDto> getTopEvent(@RequestParam(defaultValue = "10") @Positive Integer size,
+                                          @RequestParam(defaultValue = "DESC") String sort) {
+        return eventService.getTopEvent(size, sort);
     }
 }
