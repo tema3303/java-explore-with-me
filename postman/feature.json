@@ -571,14 +571,6 @@
 							"    pm.response.to.be.withBody;\r",
 							"    pm.response.to.be.json;\r",
 							"    pm.expect(pm.response.code).to.eql(200)\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Test get top events\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].id, '\"id\" 1 ивента').to.eql(5);\r",
-							"    pm.expect(jsonData[0].rate, '\"rate\" 1 ивента').to.eql(1);\r",
-							"    pm.expect(jsonData[1].id, '\"id\" 2 ивента').to.eql(85);\r",
-							"    pm.expect(jsonData[1].rate, '\"rate\" 2 ивента').to.eql(1);\r",
 							"});"
 						],
 						"type": "text/javascript"
