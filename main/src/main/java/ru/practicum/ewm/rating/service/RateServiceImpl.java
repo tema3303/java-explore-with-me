@@ -71,7 +71,7 @@ public class RateServiceImpl implements RateService {
         if (rating == null) {
             throw new NotFoundException("Отметки не найдено");
         }
-        if (rating.getIsPositive()){
+        if (rating.getIsPositive()) {
             event.setLikes(event.getLikes() - 1);
             event.setRate(event.getRate() - 1);
             event.getInitiator().setRate(event.getInitiator().getRate() - 1);
