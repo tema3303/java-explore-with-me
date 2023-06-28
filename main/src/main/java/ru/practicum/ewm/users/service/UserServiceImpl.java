@@ -62,12 +62,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserRateDto> getTopUsers(Integer size, String sort) {
         Pageable pagination;
-        if (sort.equals("ASC")) {
-            pagination = PageRequest.of(0, size, Sort.by("rate").ascending());
-        } else if (sort.equals("DESC")) {
-            pagination = PageRequest.of(0, size, Sort.by("rate").descending());
-        } else {
-            throw new ValidationException("Неккоректное правило сортировки");
+        switch (sort) {
+            case ("ASC"):
+                pagination = PageRequest.of(0, size, Sort.by("rate").ascending());
+                break;
+            case ("DESC"):
+                pagination = PageRequest.of(0, size, Sort.by("rate").descending());
+                break;
+            default:
+                throw new ValidationException("Неккоректное правило сортировки");
         }
         List<User> resultEvents = userRepository.findAll(pagination).getContent();
         return resultEvents.stream()
