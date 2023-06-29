@@ -6,12 +6,9 @@ import ru.practicum.ewm.events.model.Event;
 import javax.persistence.*;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Builder
 @Entity
 @Table(name = "compilations")

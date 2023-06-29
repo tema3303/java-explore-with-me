@@ -4,12 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Builder
 @Entity
 @Table(name = "users")
@@ -21,4 +18,6 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String name;
+    @Column
+    private Integer rate;
 }

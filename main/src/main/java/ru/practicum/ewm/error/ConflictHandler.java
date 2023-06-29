@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.practicum.ewm.error.exceptions.CategoryNameDoubleException;
 import ru.practicum.ewm.error.exceptions.EventNotPossibleChange;
+import ru.practicum.ewm.error.exceptions.LikeNotPossibleAdd;
 import ru.practicum.ewm.error.exceptions.RequestNotPossibleCreateException;
 
 import java.time.LocalDateTime;
@@ -55,6 +56,17 @@ public class ConflictHandler {
 
     @ExceptionHandler
     public ApiError handleNotFoundException(final CategoryNameDoubleException e) {
+        String message = e.getMessage();
+        return ApiError.builder()
+                .message(message)
+                .reason(REASON_INTEGRITY_CONFLICT)
+                .status(HttpStatus.CONFLICT.name())
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
+    @ExceptionHandler
+    public ApiError handleNotFoundException(final LikeNotPossibleAdd e) {
         String message = e.getMessage();
         return ApiError.builder()
                 .message(message)

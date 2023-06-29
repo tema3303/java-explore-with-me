@@ -10,12 +10,9 @@ import ru.practicum.ewm.users.model.User;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Builder
 @Entity
 @Table(name = "events")
@@ -60,4 +57,10 @@ public class Event {
     private String title;
     @Column
     private Long views;
+    @Column
+    private Integer likes;
+    @Column
+    private Integer dislikes;
+    @Column
+    private Integer rate;
 }

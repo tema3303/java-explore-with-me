@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import ru.practicum.ewm.events.model.dto.EventFullDto;
 import ru.practicum.ewm.events.model.dto.EventNewDto;
+import ru.practicum.ewm.events.model.dto.EventRateDto;
 import ru.practicum.ewm.events.model.dto.EventShortDto;
 import ru.practicum.ewm.locations.LocationDto;
 
@@ -57,6 +58,20 @@ public final class EventMapper {
                 .paid(event.getPaid())
                 .title(event.getTitle())
                 .views(event.getViews())
+                .build();
+    }
+
+    public static EventRateDto toEventRateDto(Event event) {
+        return EventRateDto.builder()
+                .id(event.getId())
+                .annotation(event.getAnnotation())
+                .category(event.getCategory())
+                .eventDate(event.getEventDate())
+                .initiator(event.getInitiator())
+                .title(event.getTitle())
+                .likes(event.getLikes())
+                .dislikes(event.getDislikes())
+                .rate(event.getRate())
                 .build();
     }
 }

@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.ewm.categories.model.Category;
@@ -79,6 +80,9 @@ public class EventServiceImpl implements EventService {
         event.setState(State.PENDING);
         event.setConfirmedRequests(0);
         event.setViews(0L);
+        event.setLikes(0);
+        event.setDislikes(0);
+        event.setRate(0);
         return EventMapper.toEventFullDto(eventRepository.save(event));
     }
 
@@ -175,7 +179,7 @@ public class EventServiceImpl implements EventService {
         Category category = categoryId != null ? CategoryMapper.toCategory(categoryService.getCategoryById(newEvent.getCategory())) : null;
         Event oldEvent = eventRepository.findById(eventId).orElseThrow();
         if (!oldEvent.getState().equals(State.PENDING) && stateActionAdmin.equals(StateActionAdmin.PUBLISH_EVENT)) {
-            throw new EventNotPossibleChange("Cannot publish the event because it's not in the right state: PUBLISHED");
+            throw new EventNotPossibleChange("Cannot publish the event because it's not in the right state: PENDING");
         }
         if (oldEvent.getState().equals(State.PUBLISHED) && stateActionAdmin.equals(StateActionAdmin.REJECT_EVENT)) {
             throw new EventNotPossibleChange("Cannot publish the event because it's not in the right state: PUBLISHED");
@@ -225,7 +229,6 @@ public class EventServiceImpl implements EventService {
         if (Objects.isNull(from) || Objects.isNull(size)) {
             throw new ValidationException("Значения не могут null");
         }
-        Pageable pagination = PageRequest.of(from / size, size);
         BooleanExpression expression = Expressions.asBoolean(true).eq(true);
         if (text != null) {
             expression = expression.and(QEvent.event.annotation.containsIgnoreCase(text))
@@ -241,6 +244,11 @@ public class EventServiceImpl implements EventService {
         if (onlyAvailable) {
             expression = expression.and(QEvent.event.participantLimit.goe(0));
         }
+        Sort eventsSort = Sort.by(Sort.Direction.ASC, "eventDate");
+        if (sort.equals("VIEWS")) {
+            eventsSort = Sort.by(Sort.Direction.ASC, "views");
+        }
+        Pageable pagination = PageRequest.of(from / size, size, eventsSort);
         expression = expression.and(QEvent.event.state.eq(State.PUBLISHED));
         List<Event> resultEvents = eventRepository.findAll(expression, pagination).getContent();
         setViewsForEvents(resultEvents);
@@ -257,6 +265,25 @@ public class EventServiceImpl implements EventService {
         }
         event.setViews(event.getViews() + 1);
         return EventMapper.toEventFullDto(event);
+    }
+
+    @Override
+    public List<EventRateDto> getTopEvent(Integer size, String sort) {
+        Pageable pagination;
+        switch (sort) {
+            case ("ASC"):
+                pagination = PageRequest.of(0, size, Sort.by("rate").ascending());
+                break;
+            case ("DESC"):
+                pagination = PageRequest.of(0, size, Sort.by("rate").descending());
+                break;
+            default:
+                throw new ValidationException("Неккоректное правило сортировки");
+        }
+        List<Event> resultEvents = eventRepository.findAll(pagination).getContent();
+        return resultEvents.stream()
+                .map(EventMapper::toEventRateDto)
+                .collect(Collectors.toList());
     }
 
     private void changeEventStateIfNecessary(Event event, StateActionUser userActionState) {
